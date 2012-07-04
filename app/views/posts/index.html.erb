@@ -1,0 +1,14 @@
+<h1>Mein Blog</h1>
+<% @posts.each do |post| %>
+<div>
+	<h2><%=link_to post.title, post%></h2>
+	<p><%= post.content%></p>
+	<p><small>
+		<%= link_to 'Edit', edit_post_path(post) %>
+		<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+	</small></p>
+</div>
+<% end %>
+
+
+<%= link_to 'New Post', new_post_path %>
